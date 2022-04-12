@@ -1,0 +1,219 @@
+:root {
+  --Scissors-Gradient: (hsl(39, 89%, 49%) to hsl(40, 84%, 53%));
+  --Paper-Gradient: (hsl(230, 89%, 62%) to hsl(230, 89%, 65%));
+  --Rock-Gradient: (hsl(349, 71%, 52%) to hsl(349, 70%, 56%));
+  --Lizard-Gradient: (hsl(261, 73%, 60%) to hsl(261, 72%, 63%));
+  --Radial-Gradient: (hsl(214, 47%, 23%) to hsl(237, 49%, 15%));
+  --Cyan: (hsl(189, 59%, 53%) to hsl(189, 58%, 57%));
+  --Dark-Text: hsl(229, 25%, 31%);
+  --Score-Text: hsl(229, 64%, 46%);
+  --Header-Outline: hsl(217, 16%, 45%);
+}
+* {
+  transition: 0.5s;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    45deg,
+    hsl(214, 47%, 23%),
+    hsl(237, 49%, 15%)
+  );
+}
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 50%;
+  align-items: center;
+}
+.score {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  padding: 10px;
+  border: 2px solid var(--Dark-Text);
+  border-radius: 6px;
+  align-items: center;
+  width: 100%;
+}
+.score ul {
+  list-style: none;
+  color: white;
+}
+.score ul li {
+  margin: -10px 0;
+}
+.score .count-score {
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+}
+.score .count-score h4 {
+  font-size: 15px;
+  color: var(--Score-Text);
+}
+.game {
+  background-image: url(/images/bg-triangle.svg);
+  width: 305px;
+  height: 275px;
+}
+.flex {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.choise {
+  padding: 20px 25px;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid;
+  height: fit-content;
+  cursor: pointer;
+  width: fit-content;
+  position: relative;
+}
+.rock {
+  align-self: flex-end;
+  border-color: hsl(349, 71%, 52%);
+}
+.paper {
+  top: -20px;
+  left: -20px;
+  border-color: hsl(230, 89%, 62%);
+}
+.scissors {
+  top: -20px;
+  right: -20px;
+  border-color: hsl(39, 89%, 49%);
+}
+.pick {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  display: none;
+}
+.you,
+.house {
+  width: 50%;
+}
+.you h3,
+.house h3 {
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+.your-pick {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.house-pick {
+  border-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--Dark-Text);
+  margin: 0 auto;
+}
+.new {
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.win-lose {
+  margin-bottom: -50px;
+  display: flex;
+  flex-basis: 25%;
+  flex-direction: column;
+  height: 250px;
+  justify-content: center;
+  gap: 20px;
+}
+.win-lose h3 {
+  font-size: 30px;
+  color: white;
+}
+.win-lose button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  color: var(--Dark-Text);
+}
+.win2 {
+  box-shadow: 0 0 50px rgba(255, 255, 255, 1), 0 0 70px rgba(255, 255, 255, 0.8),
+    0 0 85px rgba(255, 255, 255, 0.6), 0 0 100px rgba(255, 255, 255, 0.4);
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+}
+.rules {
+  padding: 10px 20px;
+  float: right;
+  background: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+.image {
+  position: absolute;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+.block {
+  display: flex !important;
+}
+.image img {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.image svg {
+  transform: translateX(230px);
+}
+@media (max-width: 375px) {
+  section {
+    width: 100%;
+  }
+  .pick {
+    flex-wrap: wrap;
+  }
+  .house {
+    order: 2;
+  }
+  .win-lose {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .image svg {
+    transform: translatex(150px);
+  }
+}
