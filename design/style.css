@@ -149,6 +149,7 @@ section {
 }
 .win-lose button {
   width: 100%;
+  cursor:pointer;
   padding: 10px;
   border-radius: 10px;
   border: none;
@@ -210,6 +211,7 @@ footer {
     order: 2;
   }
   .win-lose {
+   margin-bottom:0;
     order: 3;
     flex-basis: 100%;
   }
